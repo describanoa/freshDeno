@@ -1,24 +1,7 @@
 import { FreshContext, Handlers, PageProps } from "$fresh/server.ts";
 import Axios from "npm:axios";
-
-type Character = {
-    id: number;
-    name: string;
-    status: string;
-    species: string;
-    type: string;
-    gender: string;
-    origin: {
-        name: string;
-        url: string;
-    };
-    location: {
-        name: string;
-        url: string;
-    };
-    image: string;
-    url: string;
-};
+import { Character } from "../types.ts";
+import { Characters } from "../components/characters.tsx";
 
 type Data = {
     name: string;
@@ -54,20 +37,7 @@ const Page = (props: PageProps<Data>) => {
             </form>
             <br/>
             {results.map((character) => (
-                <div key={character.id}>
-                    <h1>{character.name}</h1>
-                    <p>ID: {character.id}</p>
-                    <p>Status: {character.status ? character.status : 'Unknown'}</p>
-                    <p>Species: {character.species ? character.species : 'Unknown'}</p>
-                    <p>Type: {character.type ? character.type : 'Unknown'}</p>
-                    <p>Gender: {character.gender ? character.gender : 'Unknown'}</p>
-                    <p>Origin: <a href={character.origin.url} target="_blank">{character.origin.name}</a></p>
-                    <p>Location: <a href={character.location.url} target="_blank">{character.location.name}</a></p>
-                    <br/>
-                    <p>Image: <img src={character.image} alt={character.name}/></p>
-                    <br/>
-                    <p>Url: <a href={character.url} target="_blank">{character.name}</a></p>
-                </div>
+                <Characters data={character} />
             ))}
             <div>
                 {page > 1 && (
