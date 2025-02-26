@@ -127,3 +127,12 @@ html {
 .tabular-nums {
   font-variant-numeric: tabular-nums;
 }
+.botonPags{
+  border-radius: 0.25cm;
+  margin-top: 0.25cm;
+  margin-left: 0.25cm;
+  margin-bottom: 0.25cm;
+  height: 2cm;
+  width: 2cm;
+  border: 2px solid black;
+}

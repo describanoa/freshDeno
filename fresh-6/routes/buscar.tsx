@@ -42,12 +42,12 @@ const Page = (props: PageProps<Data>) => {
             <div>
                 {page > 1 && (
                     <a href={`/buscar?name=${name}&page=${page - 1}`}>
-                        <button type="button">Previous</button>
+                        <button class="botonPags" type="button">Previous</button>
                     </a>
                 )}
                 {page < totalPages && (
                     <a href={`/buscar?name=${name}&page=${page + 1}`}>
-                        <button type="button">Next</button>
+                        <button class="botonPags" type="button">Next</button>
                     </a>
                 )}
             </div>

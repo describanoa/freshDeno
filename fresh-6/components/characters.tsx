@@ -22,6 +22,7 @@ export const Characters: FunctionalComponent<Props> = (Props) => {
             <p>Image: <img src={data.image} alt={data.name}/></p>
             <br/>
             <p>Url: <a href={data.url} target="_blank">{data.name}</a></p>
+            <hr />
         </div>
     );
 }
