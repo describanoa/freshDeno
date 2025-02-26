@@ -32,6 +32,7 @@ export const handler: Handlers = {
         try {
             const url = new URL(req.url);
             const name = url.searchParams.get("name") || "";
+            debugger;
             const page = parseInt(url.searchParams.get("page") || "1");
             const response = await Axios.get<{ results: Character[], info: { pages: number } }>(`https://rickandmortyapi.com/api/character?name=${name}&page=${page}`);
             return ctx.render({ name, results: response.data.results, page, totalPages: response.data.info.pages });
